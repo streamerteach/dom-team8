@@ -2,31 +2,27 @@ window.onload = function() {
     // Lyssna efter händelser
     let teamMember = document.getElementsByClassName("team-member")
 
-    let mouseover = function(event) {
-        this.style.border = "3px solid";
-    }
-
-    let mouseoff = function(event) {
-        this.style.border = "none";
-    }
-
     for (let i = 0; i < teamMember.length; i++) {
-        teamMember[i].addEventListener("mouseover", mouseover)
-        teamMember[i].addEventListener("mouseoff", mouseoff)
+        teamMember[i].addEventListener("mouseover", effectOn)
+        teamMember[i].addEventListener("mouseout", effectOff)
+        teamMember[i].addEventListener("mousedown", editTitle)
     }
 }
-var editTitle = function(e) {
+var editTitle = function() {
     // Ändra "team-title"
+
+    let teamMember = this;
+    let teamTitle = teamMember.querySelector(".team-title");
+    let newTeamTitle = window.prompt("New team title","")
+    teamTitle.innerText = newTeamTitle;
 };
 
-function effectOn(id) {
+function effectOn() {
     // Rita en ram runt personen, kanske lite drop shadow?
-    
-    teamMember.onmouseover 
-        this.style.border
-    
+    this.style.border = "2px solid"
 }
 
-function effectOff(id){
+function effectOff(){
     // Stäng av effekten när musen inte längre är ovanför personen
+    this.style.border = "none"
 }
