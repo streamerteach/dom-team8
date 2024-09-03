@@ -1,6 +1,7 @@
 window.onload = function() {
     // Lyssna efter händelser
     let teamMember = document.getElementsByClassName("team-member")
+    
 
     for (let i = 0; i < teamMember.length; i++) {
         teamMember[i].addEventListener("mouseover", effectOn)
@@ -19,10 +20,10 @@ var editTitle = function() {
 
 function effectOn() {
     // Rita en ram runt personen, kanske lite drop shadow?
-    this.style.border = "2px solid"
+    this.classList.add('hovering')
 }
 
 function effectOff(){
     // Stäng av effekten när musen inte längre är ovanför personen
-    this.style.border = "none"
+    this.classList.remove('hovering')
 }

@@ -17,7 +17,7 @@ body {
     min-height: 100%;
     height: auto;
     margin: 0 auto 0;
-
+    overflow: hidden;
 }
 
 .team-member {
@@ -43,7 +43,7 @@ body {
 
 .hovering {
     box-shadow: 7px 7px 5px #ccc;
-    border: 2px black solid;
+    outline: 2px black solid;
     border-radius: 10px;
 }
 
